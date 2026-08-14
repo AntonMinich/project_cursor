@@ -17,7 +17,7 @@ export default function HomePage({ onOpenLeasing }) {
     <main className="page">
       <section className="hero">
         <div>
-          <h1>ТехноМаркет</h1>
+          <h1>21 век finance</h1>
           <p>Смартфоны в наличии. Можно купить сразу или оформить лизинг с Фламинго.</p>
         </div>
         <div className="hero-note">Каталог · 5 моделей</div>
