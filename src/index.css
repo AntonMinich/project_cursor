@@ -107,7 +107,7 @@ img {
   display: grid;
   place-items: center;
   font-family: var(--display);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
 }
 
