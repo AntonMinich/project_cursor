@@ -9,12 +9,13 @@ npm install
 npm run dev
 ```
 
-Сборка:
+Локальная сборка: `npm run build` и `npm run preview`.
 
-```bash
-npm run build
-npm run preview
-```
+## GitHub Pages
+
+Сайт публикуется из корня ветки `main`. После изменений, которые должны попасть на сайт, выполните `npm run build` и закоммитьте обновлённые `index.html`, `assets/` и `.nojekyll`.
+
+Демо: https://antonminich.github.io/project_cursor/
 
 ## Сценарий демо
 

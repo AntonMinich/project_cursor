@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/sync-github-pages.js",
     "preview": "vite preview --host --port 4173"
   },
   "dependencies": {
