@@ -847,8 +847,22 @@ body {
   line-height: 1.25;
 }
 
+.funnel-foot-main span {
+  color: #01f69b;
+}
+
+.slide-kit .funnel-path {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.slide-kit .funnel-cycle {
+  left: calc(100% / 6);
+  width: calc(100% * 4 / 6);
+}
+
 @media (max-width: 900px) {
-  .funnel-path {
+  .funnel-path,
+  .slide-kit .funnel-path {
     grid-template-columns: 1fr;
     gap: 1.4vh;
     padding: 1vh 0;
