@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --color-fincode-blue: #101954;
+  --color-fincode-blue-deep: #0a1038;
+  --color-fincode-mint: #01f69b;
+  --color-fincode-green: #0d3e36;
+  --color-fincode-ink: #07101f;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 76px;
+}
+
+body {
+  margin: 0;
+  background: #101954;
+  color: #fff;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #01f69b;
+  color: #101954;
+}
+
+.section-shell {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  scroll-margin-top: 76px;
+}
+
+.stat-bar {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.stat-bar > span {
+  background: #01f69b;
+}
+
+.progress-line {
+  transform-origin: left center;
+}

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" fill="none">
+  <path d="M70 36c16-14 44-14 60 0l18 20v140c0 10-8 18-18 18H70c-10 0-18-8-18-18V56l18-20Z" fill="#101954"/>
+  <path d="M52 56h96v12H52z" fill="#01F69B"/>
+  <text x="100" y="110" text-anchor="middle" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="800" letter-spacing="1.5">FIN<tspan fill="#01F69B">CODE</tspan></text>
+</svg>
