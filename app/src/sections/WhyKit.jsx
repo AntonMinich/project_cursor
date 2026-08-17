@@ -1,33 +1,60 @@
-import Reveal from '../components/Reveal.jsx';
-import { IMAGES } from '../data/assets.js';
+import { motion } from 'framer-motion';
+import Slide from '../components/Slide.jsx';
 
-const TOUCH = ['Старт', 'Трасса', 'Финиш', 'Фото', 'Соцсети', 'Следующий старт'];
+const fade = (delay) => ({
+  initial: { opacity: 0, y: 8 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.36, delay, ease: [0.22, 1, 0.36, 1] },
+});
+
+const TOUCH = [
+  { n: '01', title: 'Старт' },
+  { n: '02', title: 'Трасса', cycle: true },
+  { n: '03', title: 'Финиш', cycle: true },
+  { n: '04', title: 'Фото', cycle: true },
+  { n: '05', title: 'Соцсети', cycle: true },
+  { n: '06', title: 'Следующий старт', end: true },
+];
 
 export default function WhyKit() {
   return (
-    <section id="why-kit" className="slide relative">
-      <img src={IMAGES.sport.run} alt="" className="absolute inset-0 h-full w-full object-cover" />
-      <div className="absolute inset-0 bg-fincode-blue/88" />
-      <div className="slide-inner relative z-10">
-        <Reveal>
-          <p className="kicker">ПОЧЕМУ ФОРМА</p>
-          <h2 className="mt-2">Форма — это реклама, которая движется вместе с человеком.</h2>
-        </Reveal>
-        <div className="flex flex-wrap gap-2">
-          {TOUCH.map((item) => (
-            <span key={item} className="rounded-full border border-fincode-mint/40 px-3 py-1 text-xs font-semibold md:text-sm">
-              {item}
-            </span>
-          ))}
-        </div>
-        <p className="lead max-w-3xl">
-          Баннер можно увидеть один раз. Участника команды можно встретить несколько раз за одно
-          мероприятие — и снова через месяц на следующем старте.
-        </p>
-        <p className="text-[clamp(1.05rem,2.6vh,1.7rem)] font-extrabold">
-          Один комплект формы работает <span className="text-fincode-mint">не один раз</span>.
-        </p>
+    <Slide id="why-kit" deep className="slide-funnel slide-kit">
+      <div className="funnel-top">
+        <motion.p className="kicker" {...fade(0)}>
+          Почему форма
+        </motion.p>
+        <motion.h2 className="funnel-title" {...fade(0.08)}>
+          Форма — это реклама,
+          <span>которая движется вместе с человеком.</span>
+        </motion.h2>
       </div>
-    </section>
+
+      <div className="funnel-track">
+        <div className="funnel-cycle" aria-hidden="true" />
+        <ol className="funnel-path">
+          {TOUCH.map((step, i) => (
+            <motion.li
+              key={step.n}
+              className={`funnel-step${step.cycle ? ' is-cycle' : ''}${step.end ? ' is-end' : ''}`}
+              {...fade(0.16 + i * 0.05)}
+            >
+              <p className="funnel-num">{step.n}</p>
+              <span className="funnel-marker" />
+              <p className="funnel-label">{step.title}</p>
+            </motion.li>
+          ))}
+        </ol>
+      </div>
+
+      <motion.div className="funnel-foot" {...fade(0.52)}>
+        <p className="funnel-foot-lead">
+          Баннер можно увидеть один раз. Участника команды можно встретить несколько раз
+          за одно мероприятие — и снова через месяц на следующем старте.
+        </p>
+        <p className="funnel-foot-main">
+          Один комплект формы работает <span>не один раз</span>.
+        </p>
+      </motion.div>
+    </Slide>
   );
 }
