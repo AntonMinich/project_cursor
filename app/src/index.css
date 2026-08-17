@@ -346,9 +346,10 @@ body {
 }
 
 .aud-grid {
+  --aud-gap: 2.4vw;
   display: grid;
-  grid-template-columns: 0.9fr 1.15fr 1.15fr;
-  column-gap: 2.4vw;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr) minmax(0, 1.22fr) minmax(0, 0.78fr);
+  column-gap: var(--aud-gap);
   flex: 1 1 auto;
   min-height: 0;
   margin-top: 2.6vh;
@@ -356,18 +357,23 @@ body {
 }
 
 .aud-col {
+  position: relative;
   min-width: 0;
   padding: 1.6vh 0 0;
   text-align: left;
 }
 
-.aud-col + .aud-col {
-  border-left: 1px solid rgba(255, 255, 255, 0.12);
-  padding-left: 2.4vw;
+.aud-col + .aud-col::before {
+  content: '';
+  position: absolute;
+  top: 1.6vh;
+  bottom: 0;
+  left: calc(var(--aud-gap) / -2);
+  width: 1px;
+  background: rgba(255, 255, 255, 0.12);
 }
 
-.slide-audience .aud-col h3,
-.aud-mobility h3 {
+.slide-audience .aud-col h3 {
   margin: 0.7vh 0 1.1vh;
   font-size: clamp(1.05rem, 2.2vh, 1.35rem);
   font-weight: 800;
@@ -436,15 +442,15 @@ body {
 }
 
 .aud-roles {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  align-items: center;
-  gap: 1.2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.4vh;
 }
 
 .aud-donut {
-  width: clamp(5.2rem, 10vh, 6.8rem);
-  height: clamp(5.2rem, 10vh, 6.8rem);
+  width: clamp(4.4rem, 8vh, 5.8rem);
+  height: clamp(4.4rem, 8vh, 5.8rem);
   border-radius: 50%;
   flex-shrink: 0;
 }
@@ -483,48 +489,17 @@ body {
   color: rgba(255, 255, 255, 0.88);
 }
 
-.aud-mobility {
-  display: grid;
-  grid-template-columns: auto auto minmax(0, 1fr);
-  align-items: end;
-  gap: 1.6vw;
-  flex: 0 0 auto;
-  margin-top: 2.2vh;
-  padding-top: 1.6vh;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.aud-mobility .channel-num {
-  align-self: start;
-}
-
-.aud-mobility h3 {
-  margin: 0.35vh 0 0.8vh;
-}
-
-.aud-mobility .aud-stat {
-  font-size: clamp(2.1rem, 4.8vh, 3.2rem);
-}
-
-.aud-mobility-text {
-  min-width: 0;
-  padding-bottom: 0.2vh;
-}
-
-.aud-mobility-text .aud-stat-label {
-  margin: 0;
-  max-width: 28rem;
-}
-
 @media (max-width: 900px) {
-  .aud-grid,
-  .aud-roles,
-  .aud-mobility {
+  .aud-grid {
     grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+
+  .aud-col + .aud-col::before {
+    display: none;
   }
 
   .aud-col + .aud-col {
-    border-left: 0;
     border-top: 1px solid rgba(255, 255, 255, 0.12);
     padding: 1.2vh 0 0;
   }

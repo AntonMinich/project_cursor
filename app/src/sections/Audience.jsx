@@ -96,24 +96,20 @@ export default function Audience() {
             </ul>
           </div>
         </motion.section>
-      </div>
 
-      <motion.section className="aud-mobility" {...fade(0.42)}>
-        <p className="channel-num">04</p>
-        <div className="aud-mobility-copy">
+        <motion.section className="aud-col" {...fade(0.4)}>
+          <p className="channel-num">04</p>
           <h3>Мобильность</h3>
           <p className="aud-stat">
             <CountUp value={77} />
             <span>%</span>
           </p>
-        </div>
-        <div className="aud-mobility-text">
           <p className="aud-stat-label">приезжают на старты на собственных автомобилях</p>
           <p className="aud-stat-note">
             Потенциально релевантная аудитория для автомобильного направления FINCODE
           </p>
-        </div>
-      </motion.section>
+        </motion.section>
+      </div>
     </Slide>
   );
 }
