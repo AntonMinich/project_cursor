@@ -7,9 +7,7 @@ import NotKit from './sections/NotKit.jsx';
 import Audience from './sections/Audience.jsx';
 import Scale from './sections/Scale.jsx';
 import Funnel from './sections/Funnel.jsx';
-import WhyKit from './sections/WhyKit.jsx';
 import Familiar from './sections/Familiar.jsx';
-import WhyFincode from './sections/WhyFincode.jsx';
 import TeamLook from './sections/TeamLook.jsx';
 import Others from './sections/Others.jsx';
 import Gets from './sections/Gets.jsx';
@@ -25,9 +23,7 @@ const SLIDES = [
   { id: 'audience', node: <Audience /> },
   { id: 'scale', node: <Scale /> },
   { id: 'funnel', node: <Funnel /> },
-  { id: 'why-kit', node: <WhyKit /> },
   { id: 'familiar', node: <Familiar /> },
-  { id: 'why-fincode', node: <WhyFincode /> },
   { id: 'team', node: <TeamLook /> },
   { id: 'others', node: <Others /> },
   { id: 'gets', node: <Gets /> },

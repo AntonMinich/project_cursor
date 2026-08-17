@@ -1,41 +1,77 @@
-import Reveal from '../components/Reveal.jsx';
+import { Fragment } from 'react';
+import { motion } from 'framer-motion';
 import Slide from '../components/Slide.jsx';
 
-const STORY = [
-  { title: 'Старт №1', text: 'Видит FINCODE впервые.' },
-  { title: 'Соцсети', text: 'Видит фото участников.' },
-  { title: 'Старт №2', text: 'Снова встречает FINCODE.' },
-  { title: 'Реклама', text: 'Видит бренд в другом контексте.' },
-  { title: 'Потребность', text: 'Нужен авто / телефон / техника.' },
-  { title: 'Выбор', text: 'FINCODE уже знаком.' },
+const fade = (delay) => ({
+  initial: { opacity: 0, y: 8 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.36, delay, ease: [0.22, 1, 0.36, 1] },
+});
+
+const CONTACTS = [
+  { stage: 'Старт №1', text: 'Увидел FINCODE' },
+  { stage: 'Трасса / финиш', text: 'Снова встретил бренд' },
+  { stage: 'Фото / соцсети', text: 'Увидел участников на фото' },
+  { stage: 'Старт №2', text: 'Снова встретил FINCODE' },
+  { stage: 'Потребность', text: 'Нужен авто / телефон / техника' },
+  { stage: 'Выбор', text: 'FINCODE уже знаком', end: true },
 ];
+
+function BrandLine({ text }) {
+  const parts = text.split('FINCODE');
+  if (parts.length === 1) return text;
+  return parts.map((part, i) => (
+    <Fragment key={i}>
+      {part}
+      {i < parts.length - 1 && <span className="meet-brand">FINCODE</span>}
+    </Fragment>
+  ));
+}
 
 export default function Familiar() {
   return (
-    <Slide id="familiar" deep>
-      <Reveal>
-        <p className="kicker">ЗНАКОМСТВО</p>
-        <h2 className="mt-2">
+    <Slide id="familiar" deep className="slide-meet">
+      <div className="meet-top">
+        <motion.p className="kicker" {...fade(0)}>
+          Один логотип — несколько контактов
+        </motion.p>
+        <motion.h2 className="meet-title" {...fade(0.08)}>
           Сначала — незнакомый логотип.
-          <br />
-          Потом — «я уже их где-то видел».
-        </h2>
-      </Reveal>
-      <div className="grid grid-cols-2 gap-2 md:grid-cols-6">
-        {STORY.map((item, i) => (
-          <Reveal key={item.title} delay={i * 0.04}>
-            <article className="h-full rounded-2xl border border-white/10 p-3">
-              <p className="kicker-sm">{String(i + 1).padStart(2, '0')}</p>
-              <h3 className="mt-2 font-bold">{item.title}</h3>
-              <p className="lead mt-1">{item.text}</p>
-            </article>
-          </Reveal>
-        ))}
+          <span>Потом — «я уже их где-то видел».</span>
+        </motion.h2>
       </div>
-      <p className="text-[clamp(1rem,2.3vh,1.45rem)] font-semibold">
-        Мы не рассчитываем на продажу с первого контакта.{' '}
-        <span className="text-fincode-mint">Мы создаем знакомство с брендом.</span>
-      </p>
+
+      <div className="meet-body">
+        <ol className="meet-path">
+          {CONTACTS.map((item, i) => (
+            <motion.li key={item.stage} className={item.end ? 'is-end' : ''} {...fade(0.14 + i * 0.05)}>
+              <span className="meet-dot" />
+              <p className="meet-stage">{item.stage}</p>
+              <p className="meet-text">
+                <BrandLine text={item.text} />
+              </p>
+            </motion.li>
+          ))}
+        </ol>
+
+        <motion.aside className="meet-aside" {...fade(0.28)}>
+          <p className="meet-echo" aria-hidden="true">
+            <span>FINCODE</span>
+            <span>FINCODE</span>
+            <span>FINCODE</span>
+            <span>FINCODE</span>
+          </p>
+          <div className="meet-kit">
+            <p className="meet-kit-title">Форма работает не один раз.</p>
+            <p className="meet-kit-line">Старт → трасса → финиш → фото → соцсети → следующий старт</p>
+          </div>
+        </motion.aside>
+      </div>
+
+      <motion.div className="meet-foot" {...fade(0.52)}>
+        <p className="meet-foot-lead">Мы не рассчитываем на продажу с первого контакта.</p>
+        <p className="meet-foot-main">Мы создаём знакомство с брендом.</p>
+      </motion.div>
     </Slide>
   );
 }
