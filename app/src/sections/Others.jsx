@@ -4,14 +4,14 @@ import { IMAGES } from '../data/assets.js';
 export default function Others() {
   return (
     <section id="others" className="section-shell">
-      <div className="mx-auto w-full max-w-[1320px] px-6 py-24 md:px-10">
+      <div className="mx-auto flex h-full w-full max-w-[1320px] flex-col justify-center px-5 py-4 md:px-10">
         <Reveal>
           <p className="mb-4 text-xs font-semibold tracking-[0.24em] text-fincode-mint">ПРЕЦЕДЕНТЫ</p>
           <h2 className="max-w-4xl text-4xl font-extrabold md:text-6xl">
             Бренды уже используют спорт как канал коммуникации
           </h2>
         </Reveal>
-        <div className="mt-14 grid grid-cols-2 gap-3 md:grid-cols-5 md:gap-4">
+        <div className="mt-5 md:mt-8 grid grid-cols-2 gap-3 md:grid-cols-5 md:gap-4">
           {IMAGES.teams.belarus.map((team, i) => (
             <Reveal key={team.name} delay={i * 0.05} className={i === 0 ? 'col-span-2 row-span-2' : ''}>
               <figure className="relative h-full min-h-[180px] overflow-hidden rounded-2xl md:min-h-[220px]">

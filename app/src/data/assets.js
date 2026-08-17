@@ -49,6 +49,8 @@ export const SECTIONS = [
   { id: 'measure', label: 'Результат' },
   { id: 'leads', label: 'Результат' },
   { id: 'why-now', label: 'Проект' },
+  { id: 'kit-tops', label: 'Форма' },
+  { id: 'kit-race', label: 'Форма' },
   { id: 'finale', label: 'Проект' },
 ];
 
@@ -59,5 +61,6 @@ export const NAV = [
   { id: 'funnel', label: 'Механика' },
   { id: 'team', label: 'FINCODE TEAM' },
   { id: 'gets', label: 'Результат' },
+  { id: 'kit-tops', label: 'Форма' },
   { id: 'year', label: 'Проект' },
 ];
