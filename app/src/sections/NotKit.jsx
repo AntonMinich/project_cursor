@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import Slide from '../components/Slide.jsx';
+import { IMAGES } from '../data/assets.js';
 
 const fade = (delay) => ({
   initial: { opacity: 0, y: 8 },
@@ -27,7 +28,12 @@ const BLOCKS = [
 
 export default function NotKit() {
   return (
-    <Slide id="not-kit" deep className="slide-channel">
+    <Slide
+      id="not-kit"
+      deep
+      className="slide-channel"
+      overlay={<img src={IMAGES.fingerprint} alt="" className="channel-mark" />}
+    >
       <div className="channel-top">
         <motion.p className="channel-kicker" {...fade(0)}>
           Маркетинговый инструмент

@@ -4,6 +4,7 @@ export const IMAGES = {
   logo: asset('brand/fincode-logo.png'),
   logoLight: asset('brand/fincode-logo-light.png'),
   wordmark: asset('brand/fincode-wordmark-light.png'),
+  fingerprint: asset('brand/fincode-fingerprint.png'),
   mark: asset('brand/fincode-mark.svg'),
   qr: asset('brand/qr-demo.svg'),
   sport: {
