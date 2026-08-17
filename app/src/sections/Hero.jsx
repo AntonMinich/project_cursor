@@ -12,12 +12,13 @@ export default function Hero() {
           <h1>
             FINCODE <span className="text-fincode-mint">TEAM</span>
           </h1>
-          <p className="mt-5 max-w-2xl text-[clamp(1.35rem,3.4vh,2.35rem)] font-semibold leading-[1.2]">
+          <p className="mt-6 max-w-3xl text-[clamp(1.55rem,4vh,2.7rem)] font-extrabold leading-[1.15] tracking-[-0.02em] text-white">
             Команда, которую видят.
             <br />
             Бренд, который запоминают.
           </p>
-          <p className="mt-4 whitespace-nowrap text-[clamp(0.78rem,2.15vw,1.7rem)] font-medium leading-none text-white/88">
+          <div className="mt-5 h-px w-14 bg-fincode-mint" />
+          <p className="mt-4 whitespace-nowrap text-[clamp(0.7rem,1.7vw,1.05rem)] font-normal tracking-[0.04em] text-white/55">
             Корпоративная спортивная форма как инструмент продвижения бренда.
           </p>
         </Reveal>
