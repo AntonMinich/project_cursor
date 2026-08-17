@@ -18,7 +18,7 @@ export default function Hero() {
             Бренд, который запоминают.
           </p>
           <div className="mt-5 h-px w-14 bg-fincode-mint" />
-          <p className="mt-4 whitespace-nowrap text-[clamp(0.7rem,1.7vw,1.05rem)] font-normal tracking-[0.04em] text-white/55">
+          <p className="mt-4 whitespace-nowrap text-[clamp(0.82rem,1.85vw,1.2rem)] font-medium tracking-[0.02em] text-white/90">
             Корпоративная спортивная форма как инструмент продвижения бренда.
           </p>
         </Reveal>
