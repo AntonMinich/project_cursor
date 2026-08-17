@@ -111,12 +111,30 @@ body {
   text-transform: uppercase;
 }
 
+.slide-channel {
+  position: relative;
+}
+
 .slide-channel .slide-inner {
+  position: relative;
+  z-index: 1;
   max-width: min(1480px, 94vw);
   width: 100%;
   justify-content: flex-start;
   gap: 0;
   padding: 2.4vh 2.2vw 1.6vh;
+}
+
+.channel-mark {
+  position: absolute;
+  top: 2.4vh;
+  right: 2.2vw;
+  z-index: 0;
+  width: min(22vw, 240px);
+  height: auto;
+  opacity: 0.72;
+  pointer-events: none;
+  user-select: none;
 }
 
 .channel-top {
@@ -130,7 +148,7 @@ body {
 .channel-kicker {
   margin: 0;
   color: #01f69b;
-  font-size: clamp(0.72rem, 1.35vh, 0.88rem);
+  font-size: calc(clamp(0.72rem, 1.35vh, 0.88rem) + 2px);
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -142,21 +160,23 @@ body {
   font-size: clamp(2.15rem, 6vh, 4rem);
   font-weight: 800;
   letter-spacing: -0.035em;
-  line-height: 1.05;
+  line-height: 1.21;
 }
 
 .channel-title span {
   display: block;
+  margin-top: 0.12em;
   color: #01f69b;
 }
 
 .channel-lead {
-  margin: 1.4vh 0 0;
-  max-width: 38rem;
-  font-size: clamp(1.05rem, 2.35vh, 1.5rem);
+  margin: 1.61vh 0 0;
+  max-width: none;
+  font-size: clamp(0.92rem, 1.8vw, 1.5rem);
   font-weight: 500;
   line-height: 1.35;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 255, 255, 0.9);
+  white-space: nowrap;
 }
 
 .channel-bottom {
@@ -181,9 +201,10 @@ body {
 .channel-num {
   margin: 0;
   color: #01f69b;
-  font-size: clamp(0.78rem, 1.5vh, 0.94rem);
-  font-weight: 700;
-  letter-spacing: 0.16em;
+  font-size: clamp(1.35rem, 3.2vh, 2.05rem);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1;
 }
 
 .slide-channel .channel-col h3 {
@@ -239,6 +260,17 @@ body {
 
   .channel-path {
     display: none;
+  }
+
+  .channel-mark {
+    width: min(18vw, 120px);
+    opacity: 0.4;
+    top: 1.2vh;
+    right: 3vw;
+  }
+
+  .channel-lead {
+    white-space: normal;
   }
 }
 
