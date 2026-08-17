@@ -40,9 +40,6 @@ export const SECTIONS = [
   { id: 'team', label: 'FINCODE TEAM' },
   { id: 'others', label: 'FINCODE TEAM' },
   { id: 'gets', label: 'Результат' },
-  { id: 'year', label: 'Проект' },
-  { id: 'measure', label: 'Результат' },
-  { id: 'leads', label: 'Результат' },
   { id: 'why-now', label: 'Проект' },
   { id: 'finale', label: 'Проект' },
 ];
@@ -54,5 +51,5 @@ export const NAV = [
   { id: 'familiar', label: 'Механика' },
   { id: 'team', label: 'Форма' },
   { id: 'gets', label: 'Результат' },
-  { id: 'year', label: 'Проект' },
+  { id: 'why-now', label: 'Проект' },
 ];
