@@ -12,7 +12,8 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-fincode-blue via-fincode-blue/80 to-fincode-blue/25" />
       <div className="slide-inner relative z-10 justify-end pb-4">
         <Reveal>
-          <p className="kicker">ООО «ФИНАНСОВЫЙ КОД»</p>
+          <img src={IMAGES.logoLight} alt="FINCODE" className="h-8 w-auto md:h-10" />
+          <p className="kicker mt-4">ООО «ФИНАНСОВЫЙ КОД»</p>
           <h1 className="mt-3">
             FINCODE <span className="text-fincode-mint">TEAM</span>
           </h1>

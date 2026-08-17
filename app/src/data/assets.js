@@ -1,7 +1,8 @@
 export const asset = (file) => `${import.meta.env.BASE_URL}assets/${file}`;
 
 export const IMAGES = {
-  logo: asset('brand/fincode-logo.svg'),
+  logo: asset('brand/fincode-logo.png'),
+  logoLight: asset('brand/fincode-logo-light.png'),
   mark: asset('brand/fincode-mark.svg'),
   qr: asset('brand/qr-demo.svg'),
   sport: {
@@ -25,6 +26,7 @@ export const IMAGES = {
     ],
   },
   kit: {
+    board: asset('kit/fincode-kit.jpg'),
     jersey: asset('kit/jersey.svg'),
     bib: asset('kit/bib.svg'),
     running: asset('kit/running.svg'),
@@ -49,8 +51,6 @@ export const SECTIONS = [
   { id: 'measure', label: 'Результат' },
   { id: 'leads', label: 'Результат' },
   { id: 'why-now', label: 'Проект' },
-  { id: 'kit-tops', label: 'Форма' },
-  { id: 'kit-race', label: 'Форма' },
   { id: 'finale', label: 'Проект' },
 ];
 
@@ -59,8 +59,7 @@ export const NAV = [
   { id: 'audience', label: 'Аудитория' },
   { id: 'scale', label: 'Масштаб' },
   { id: 'funnel', label: 'Механика' },
-  { id: 'team', label: 'FINCODE TEAM' },
+  { id: 'team', label: 'Форма' },
   { id: 'gets', label: 'Результат' },
-  { id: 'kit-tops', label: 'Форма' },
   { id: 'year', label: 'Проект' },
 ];
