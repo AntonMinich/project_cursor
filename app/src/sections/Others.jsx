@@ -4,22 +4,26 @@ import { IMAGES } from '../data/assets.js';
 
 export default function Others() {
   return (
-    <Slide id="others">
-      <Reveal>
-        <p className="kicker">ПРЕЦЕДЕНТЫ</p>
-        <h2 className="mt-2">Бренды уже используют спорт как канал коммуникации</h2>
-      </Reveal>
-      <div className="fill grid min-h-0 grid-cols-2 gap-2 md:grid-cols-5">
+    <Slide id="others" className="slide-others">
+      <div className="others-top">
+        <Reveal>
+          <p className="kicker">ПРЕЦЕДЕНТЫ</p>
+          <h2 className="others-title">Бренды уже используют спорт как канал коммуникации</h2>
+        </Reveal>
+      </div>
+
+      <div className="others-board">
         {IMAGES.teams.map((team) => (
-          <figure key={team.name} className="relative min-h-0 overflow-hidden rounded-xl">
-            <img src={team.src} alt={team.name} className="h-full w-full object-cover" />
-            <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 px-2 py-1.5 text-xs font-semibold md:text-sm">
-              {team.name}
-            </figcaption>
+          <figure key={team.name} className={team.wide ? 'others-card is-wide' : 'others-card'}>
+            <div className="others-frame">
+              <img src={team.src} alt={team.name} />
+            </div>
+            <figcaption>{team.name}</figcaption>
           </figure>
         ))}
       </div>
-      <p className="lead">Корпоративная команда становится частью публичного образа компании.</p>
+
+      <p className="others-foot">Корпоративная команда становится частью публичного образа компании.</p>
     </Slide>
   );
 }
