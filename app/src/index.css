@@ -878,6 +878,19 @@ body {
   .others-stage {
     grid-template-columns: 1fr;
   }
+
+  .gets-board {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gets-card + .gets-card {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .gets-title {
+    max-width: none;
+  }
 }
 
 .slide-others .slide-inner {
@@ -1043,6 +1056,109 @@ body {
   font-size: clamp(1rem, 2.2vh, 1.35rem);
   font-weight: 600;
   color: rgba(255, 255, 255, 0.78);
+}
+
+.slide-gets .slide-inner {
+  max-width: min(1480px, 94vw);
+  width: 100%;
+  justify-content: flex-start;
+  gap: 0;
+  padding: 1.8vh 2.2vw 4.6vh;
+}
+
+.gets-top {
+  flex: 0 0 auto;
+}
+
+.slide-gets .gets-title {
+  margin: 0.7vh 0 0;
+  max-width: 22ch;
+  font-size: clamp(2rem, 5.2vh, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.gets-title span {
+  display: block;
+  color: #01f69b;
+}
+
+.gets-board {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+  margin-top: 2.8vh;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.gets-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  min-width: 0;
+  padding: 2.2vh 1.5vw 0 0;
+}
+
+.gets-card + .gets-card {
+  padding-left: 1.5vw;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.gets-num {
+  margin: 0;
+  color: #01f69b;
+  font-size: clamp(1.05rem, 2.2vh, 1.4rem);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1;
+}
+
+.gets-card h3 {
+  margin: 0;
+  max-width: 9ch;
+  font-size: clamp(1.2rem, 2.6vh, 1.7rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+}
+
+.gets-card p {
+  margin: 0;
+  max-width: 16ch;
+  font-size: clamp(0.92rem, 1.85vh, 1.12rem);
+  font-weight: 500;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.gets-card.is-end h3 {
+  color: #01f69b;
+}
+
+.gets-foot {
+  flex: 0 0 auto;
+  margin-top: auto;
+  padding-top: 2vh;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.gets-foot-lead {
+  margin: 0;
+  font-size: clamp(1.12rem, 2.5vh, 1.55rem);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.gets-foot-main {
+  margin: 0.55vh 0 0;
+  font-size: clamp(1.4rem, 3.4vh, 2.15rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: #01f69b;
 }
 
 .fill {

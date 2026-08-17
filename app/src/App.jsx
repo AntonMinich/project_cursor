@@ -10,9 +10,6 @@ import Familiar from './sections/Familiar.jsx';
 import TeamLook from './sections/TeamLook.jsx';
 import Others from './sections/Others.jsx';
 import Gets from './sections/Gets.jsx';
-import Year from './sections/Year.jsx';
-import Measure from './sections/Measure.jsx';
-import Leads from './sections/Leads.jsx';
 import WhyNow from './sections/WhyNow.jsx';
 import Finale from './sections/Finale.jsx';
 
@@ -25,9 +22,6 @@ const SLIDES = [
   { id: 'team', node: <TeamLook /> },
   { id: 'others', node: <Others /> },
   { id: 'gets', node: <Gets /> },
-  { id: 'year', node: <Year /> },
-  { id: 'measure', node: <Measure /> },
-  { id: 'leads', node: <Leads /> },
   { id: 'why-now', node: <WhyNow /> },
   { id: 'finale', node: <Finale /> },
 ];
