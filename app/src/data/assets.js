@@ -8,7 +8,7 @@ export const IMAGES = {
   mark: asset('brand/fincode-mark.svg'),
   qr: asset('brand/qr-demo.svg'),
   sport: {
-    hero: asset('sport/hero.webp'),
+    hero: asset('sport/hero.jpg'),
     pack: asset('sport/sport-02.jpg'),
     run: asset('sport/sport-03.jpg'),
     bike: asset('sport/sport-04.jpg'),
