@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" fill="none">
+  <path d="M78 18c12-8 32-8 44 0l20 22v176c0 8-8 14-16 14H74c-8 0-16-6-16-14V40l20-22Z" fill="#0D3E36"/>
+  <path d="M62 78h76v118c0 6-6 12-14 12H76c-8 0-14-6-14-12V78Z" fill="#101954"/>
+  <path d="M62 78h76v8H62z" fill="#01F69B"/>
+  <text x="100" y="128" text-anchor="middle" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="12" font-weight="800" letter-spacing="1.5">FIN<tspan fill="#01F69B">CODE</tspan></text>
+</svg>

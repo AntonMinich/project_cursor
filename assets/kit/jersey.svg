@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" fill="none">
+  <path d="M62 28c18-16 58-16 76 0l22 16 14-6 8 32-28 14v132c0 10-9 18-20 18H76c-11 0-20-8-20-18V84L28 70 36 38l14 6 12-16Z" fill="#101954"/>
+  <path d="M62 28c18-16 58-16 76 0v18H62V28Z" fill="#0D3E36"/>
+  <path d="M54 86h92v8H54z" fill="#01F69B"/>
+  <text x="100" y="92" text-anchor="middle" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="13" font-weight="800" letter-spacing="1.5">FIN<tspan fill="#01F69B">CODE</tspan></text>
+  <text x="100" y="150" text-anchor="middle" fill="#01F69B" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="800">01</text>
+</svg>
