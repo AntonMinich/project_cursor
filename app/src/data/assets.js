@@ -1,8 +1,8 @@
 export const asset = (file) => `${import.meta.env.BASE_URL}assets/${file}`;
 
 export const IMAGES = {
-  logo: asset('brand/fincode-logo.png'),
-  logoLight: asset('brand/fincode-logo-light.png'),
+  logo: asset('brand/fincode-logo.svg'),
+  logoLight: asset('brand/fincode-logo-light.svg'),
   mark: asset('brand/fincode-mark.svg'),
   qr: asset('brand/qr-demo.svg'),
   sport: {
