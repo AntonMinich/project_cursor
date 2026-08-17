@@ -14,19 +14,13 @@ export const IMAGES = {
     bike: asset('sport/sport-04.jpg'),
     finish: asset('sport/sport-05.jpg'),
   },
-  teams: {
-    belarus: [
-      { src: asset('teams/belarus-01.jpg'), name: 'Servolux' },
-      { src: asset('teams/belarus-02.jpg'), name: 'Т-Банк' },
-      { src: asset('teams/belarus-03.jpg'), name: 'Zmitroc' },
-      { src: asset('teams/belarus-04.jpg'), name: 'On-bike' },
-      { src: asset('teams/belarus-05.jpg'), name: 'Rovar' },
-    ],
-    russia: [
-      { src: asset('teams/russia-01.jpg'), name: 'Россия · пример 1' },
-      { src: asset('teams/russia-02.jpg'), name: 'Россия · пример 2' },
-    ],
-  },
+  teams: [
+    { src: asset('teams/servolux.jpg'), name: 'Servolux' },
+    { src: asset('teams/rovar.jpg'), name: 'Rovar' },
+    { src: asset('teams/on-bike.jpg'), name: 'On-bike' },
+    { src: asset('teams/elkpath.jpg'), name: 'Elkpath' },
+    { src: asset('teams/iron.jpg'), name: 'Триатлон' },
+  ],
   kit: {
     board: asset('kit/fincode-kit.jpg'),
     jersey: asset('kit/jersey.svg'),
