@@ -1,48 +1,41 @@
 import Reveal from '../components/Reveal.jsx';
+import Slide from '../components/Slide.jsx';
 import { IMAGES } from '../data/assets.js';
 
 const OPTIONS = ['Автомобиль', 'Телефон', 'Техника', 'Другие покупки'];
 
 export default function Leads() {
   return (
-    <section id="leads" className="section-shell">
-      <div className="mx-auto grid h-full w-full max-w-[1320px] items-center gap-8 px-5 py-4 md:grid-cols-2 md:px-10">
+    <Slide id="leads">
+      <div className="grid min-h-0 items-center gap-4 md:grid-cols-[1.2fr_0.8fr]">
         <Reveal>
-          <p className="mb-4 text-xs font-semibold tracking-[0.24em] text-fincode-mint">ЛИДЫ</p>
-          <h2 className="text-4xl font-extrabold leading-tight md:text-5xl">
-            Увидел FINCODE → получил повод познакомиться ближе
-          </h2>
-          <p className="mt-6 text-xl text-white/70">
-            На форме и в зоне команды — QR-код. После сканирования пользователь попадает на специальный лендинг.
-          </p>
-          <p className="mt-8 text-3xl font-semibold">Тех, у кого есть команда</p>
-          <p className="mt-3 text-xl text-white/70">FINCODE помогает двигаться дальше.</p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <p className="kicker">ЛИДЫ</p>
+          <h2 className="mt-2">Увидел FINCODE → получил повод познакомиться ближе</h2>
+          <p className="lead mt-2">На форме и в зоне команды — QR-код. После сканирования — специальный лендинг.</p>
+          <p className="mt-3 text-[clamp(1.05rem,2.4vh,1.5rem)] font-semibold">Тех, у кого есть команда</p>
+          <p className="lead mt-1">FINCODE помогает двигаться дальше.</p>
+          <div className="mt-3 flex flex-wrap gap-2">
             {OPTIONS.map((item) => (
-              <span key={item} className="rounded-full border border-white/15 px-4 py-2 text-sm font-semibold">
+              <span key={item} className="rounded-full border border-white/15 px-3 py-1 text-xs font-semibold">
                 {item}
               </span>
             ))}
           </div>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <span className="rounded-full bg-fincode-mint px-6 py-3 text-sm font-bold tracking-wide text-fincode-blue">
+          <div className="mt-3 flex flex-wrap gap-2">
+            <span className="rounded-full bg-fincode-mint px-4 py-1.5 text-xs font-bold text-fincode-blue">
               Узнать о FINCODE
             </span>
-            <span className="rounded-full border border-fincode-mint px-6 py-3 text-sm font-bold tracking-wide text-fincode-mint">
+            <span className="rounded-full border border-fincode-mint px-4 py-1.5 text-xs font-bold text-fincode-mint">
               Рассчитать лизинг
             </span>
           </div>
         </Reveal>
-        <Reveal delay={0.08}>
-          <div className="mx-auto w-full max-w-sm rounded-[32px] border border-white/10 bg-white p-8 text-fincode-blue">
-            <p className="text-xs font-bold tracking-[0.2em] text-fincode-green">DEMO QR</p>
-            <img src={IMAGES.qr} alt="Демонстрационный QR-код FINCODE" className="mx-auto mt-6 w-56" />
-            <p className="mt-6 text-center text-sm font-medium text-fincode-blue/70">
-              Демо-версия. В сезоне код ведет на лендинг FINCODE.
-            </p>
-          </div>
-        </Reveal>
+        <div className="mx-auto w-full max-w-[220px] rounded-2xl bg-white p-4 text-fincode-blue">
+          <p className="text-[10px] font-bold tracking-[0.2em] text-fincode-green">DEMO QR</p>
+          <img src={IMAGES.qr} alt="Демонстрационный QR-код FINCODE" className="mx-auto mt-3 w-36" />
+          <p className="mt-3 text-center text-[11px] text-fincode-blue/70">Демо. В сезоне код ведет на лендинг.</p>
+        </div>
       </div>
-    </section>
+    </Slide>
   );
 }
