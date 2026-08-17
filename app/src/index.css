@@ -891,6 +891,26 @@ body {
   .gets-title {
     max-width: none;
   }
+
+  .now-board {
+    grid-template-columns: 1fr;
+  }
+
+  .now-card + .now-card {
+    padding-left: 0;
+    border-left: 0;
+    padding-top: 2vh;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .finale-path {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .finale-path li + li {
+    border-left: 0;
+    padding-left: 0;
+  }
 }
 
 .slide-others .slide-inner {
@@ -1159,6 +1179,176 @@ body {
   letter-spacing: -0.02em;
   line-height: 1.2;
   color: #01f69b;
+}
+
+.slide-now .slide-inner,
+.slide-finale .slide-inner {
+  max-width: min(1480px, 94vw);
+  width: 100%;
+  justify-content: flex-start;
+  gap: 0;
+  padding: 1.8vh 2.2vw 4.6vh;
+}
+
+.now-top,
+.finale-top {
+  flex: 0 0 auto;
+}
+
+.slide-now .now-title,
+.slide-finale .finale-title {
+  margin: 0.7vh 0 0;
+  font-size: clamp(2rem, 5.2vh, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.now-title span,
+.finale-slogan span {
+  display: block;
+  color: #01f69b;
+}
+
+.finale-title span {
+  color: #01f69b;
+}
+
+.now-lead {
+  margin: 1.2vh 0 0;
+  max-width: 42rem;
+  font-size: clamp(0.95rem, 1.9vh, 1.2rem);
+  font-weight: 500;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.now-board {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  margin-top: 3.2vh;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.now-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1.4vh;
+  min-width: 0;
+  padding: 2.6vh 2.4vw 0 0;
+}
+
+.now-card + .now-card {
+  padding-left: 2.4vw;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.now-label {
+  margin: 0;
+  color: #01f69b;
+  font-size: clamp(0.78rem, 1.5vh, 0.95rem);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.now-line {
+  margin: 0;
+  max-width: 14ch;
+  font-size: clamp(1.8rem, 4.4vh, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.now-card.is-next .now-line {
+  color: #01f69b;
+}
+
+.now-foot,
+.finale-foot {
+  flex: 0 0 auto;
+  margin-top: auto;
+  padding-top: 2vh;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.now-foot-lead,
+.finale-foot-lead {
+  margin: 0;
+  font-size: clamp(1.12rem, 2.5vh, 1.55rem);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.now-foot-main,
+.finale-foot-main {
+  margin: 0.55vh 0 0;
+  font-size: clamp(1.4rem, 3.4vh, 2.15rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: #01f69b;
+}
+
+.finale-logo {
+  display: block;
+  height: clamp(2.4rem, 6vh, 3.8rem);
+  width: auto;
+  margin-top: 1.4vh;
+}
+
+.finale-slogan {
+  margin: 1.4vh 0 0;
+  font-size: clamp(1.35rem, 3.2vh, 2.1rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.finale-path {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  margin: 3vh 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.finale-path li {
+  display: flex;
+  flex-direction: column;
+  gap: 1vh;
+  min-width: 0;
+  padding: 2.2vh 1.4vw 0 0;
+}
+
+.finale-path li + li {
+  padding-left: 1.4vw;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.finale-step {
+  color: #01f69b;
+  font-size: clamp(1.05rem, 2.2vh, 1.4rem);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1;
+}
+
+.finale-text {
+  max-width: 11ch;
+  font-size: clamp(1.15rem, 2.5vh, 1.55rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
 }
 
 .fill {
