@@ -58,6 +58,12 @@ body {
   overflow: hidden;
 }
 
+.slide-inner-wide {
+  max-width: min(1600px, 100%);
+  padding: 4px 12px;
+  gap: 6px;
+}
+
 .slide h1 {
   font-size: clamp(2rem, 7vh, 4.6rem);
   line-height: 0.95;

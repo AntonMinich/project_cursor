@@ -13,7 +13,11 @@ npm run dev
 
 ## Замена фотографий
 
-Файлы в `app/public/assets/`:
+Новые картинки для агента кладите в **`image_Fincode/`**.
+
+Загрузка на GitHub: https://github.com/AntonMinich/project_cursor/upload/main/image_Fincode
+
+Готовые файлы презентации — в `app/public/assets/`:
 
 - `brand/` — логотип
 - `sport/` — соревнования

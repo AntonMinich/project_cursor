@@ -6,7 +6,7 @@ export default function Finale() {
     <section id="finale" className="slide">
       <div className="slide-inner">
         <Reveal>
-          <img src={IMAGES.logo} alt="FINCODE" className="h-7 w-auto md:h-9" />
+          <img src={IMAGES.logoLight} alt="FINCODE" className="h-8 w-auto md:h-11" />
           <h1 className="mt-4">
             FINCODE <span className="text-fincode-mint">TEAM</span>
           </h1>

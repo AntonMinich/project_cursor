@@ -17,7 +17,6 @@ import Year from './sections/Year.jsx';
 import Measure from './sections/Measure.jsx';
 import Leads from './sections/Leads.jsx';
 import WhyNow from './sections/WhyNow.jsx';
-import { KitRace, KitTops } from './sections/KitVariants.jsx';
 import Finale from './sections/Finale.jsx';
 
 const SLIDES = [
@@ -36,8 +35,6 @@ const SLIDES = [
   { id: 'measure', node: <Measure /> },
   { id: 'leads', node: <Leads /> },
   { id: 'why-now', node: <WhyNow /> },
-  { id: 'kit-tops', node: <KitTops /> },
-  { id: 'kit-race', node: <KitRace /> },
   { id: 'finale', node: <Finale /> },
 ];
 
