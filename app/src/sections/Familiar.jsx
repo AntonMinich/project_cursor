@@ -69,8 +69,10 @@ export default function Familiar() {
       </div>
 
       <motion.div className="meet-foot" {...fade(0.52)}>
-        <p className="meet-foot-lead">Мы не рассчитываем на продажу с первого контакта.</p>
-        <p className="meet-foot-main">Мы создаём знакомство с брендом.</p>
+        <p className="meet-foot-lead">Мы не рассчитываем на продажу с первого контакта. Мы создаём знакомство с брендом.</p>
+        <p className="meet-foot-main">
+          Мы хотим, чтобы в момент потребности название <BrandLine text="FINCODE" /> уже было знакомо.
+        </p>
       </motion.div>
     </Slide>
   );

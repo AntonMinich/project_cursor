@@ -6,7 +6,6 @@ import Hero from './sections/Hero.jsx';
 import NotKit from './sections/NotKit.jsx';
 import Audience from './sections/Audience.jsx';
 import Scale from './sections/Scale.jsx';
-import Funnel from './sections/Funnel.jsx';
 import Familiar from './sections/Familiar.jsx';
 import TeamLook from './sections/TeamLook.jsx';
 import Others from './sections/Others.jsx';
@@ -22,7 +21,6 @@ const SLIDES = [
   { id: 'not-kit', node: <NotKit /> },
   { id: 'audience', node: <Audience /> },
   { id: 'scale', node: <Scale /> },
-  { id: 'funnel', node: <Funnel /> },
   { id: 'familiar', node: <Familiar /> },
   { id: 'team', node: <TeamLook /> },
   { id: 'others', node: <Others /> },
