@@ -871,14 +871,12 @@ body {
     display: none;
   }
 
-  .others-board {
-    flex-wrap: wrap;
+  .others-peek {
+    display: none;
   }
 
-  .others-card,
-  .others-card.is-wide {
-    flex: 1 1 42%;
-    height: 28vh;
+  .others-stage {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -898,38 +896,61 @@ body {
   margin: 0.7vh 0 0;
 }
 
-.others-board {
+.others-stage {
   flex: 1 1 auto;
   min-height: 0;
-  display: flex;
+  display: grid;
+  grid-template-columns: 16% minmax(0, 1fr) 16%;
   align-items: stretch;
-  gap: 1.1vw;
-  margin-top: 2.2vh;
+  gap: 1.4vw;
+  margin-top: 1.8vh;
 }
 
-.others-card {
-  flex: 1 1 0;
+.others-peek {
+  align-self: center;
+  height: 58%;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #0a1038;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.others-peek.is-prev {
+  transform: perspective(900px) rotateY(18deg) scale(0.94);
+  opacity: 0.55;
+}
+
+.others-peek.is-next {
+  transform: perspective(900px) rotateY(-18deg) scale(0.94);
+  opacity: 0.55;
+}
+
+.others-peek img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.others-hero {
   min-width: 0;
   min-height: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.9vh;
+  gap: 1.1vh;
 }
 
-.others-card.is-wide {
-  flex: 1.85 1 0;
-}
-
-.others-frame {
+.others-hero-frame {
+  position: relative;
   flex: 1 1 0;
   min-height: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
 
-.others-frame img {
+.others-hero-frame img {
   max-width: 100%;
   max-height: 100%;
   width: auto;
@@ -937,18 +958,88 @@ body {
   object-fit: contain;
 }
 
-.others-card figcaption {
+.others-nav {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  transform: translateY(-50%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(10, 16, 56, 0.55);
+  color: #fff;
+  cursor: pointer;
+}
+
+.others-nav.is-left { left: 0.4vw; }
+.others-nav.is-right { right: 0.4vw; }
+
+.others-hero figcaption {
   flex: 0 0 auto;
   margin: 0;
   text-align: center;
-  font-size: clamp(0.9rem, 1.9vh, 1.15rem);
+  color: #01f69b;
+  font-size: clamp(1.5rem, 3.6vh, 2.3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.others-strip {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 0.7vw;
+  margin-top: 1.4vh;
+}
+
+.others-thumb {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45vh;
+  width: 7.6vw;
+  min-width: 72px;
+  max-width: 110px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+}
+
+.others-thumb img {
+  display: block;
+  width: 100%;
+  height: 5.2vw;
+  min-height: 48px;
+  max-height: 72px;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  opacity: 0.55;
+}
+
+.others-thumb span {
+  font-size: clamp(0.68rem, 1.3vh, 0.82rem);
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.others-thumb.is-on {
+  color: #01f69b;
+}
+
+.others-thumb.is-on img {
+  border-color: #01f69b;
+  opacity: 1;
 }
 
 .others-foot {
   flex: 0 0 auto;
-  margin: 1.8vh 0 0;
+  margin: 1.4vh 0 0;
   font-size: clamp(1rem, 2.2vh, 1.35rem);
   font-weight: 600;
   color: rgba(255, 255, 255, 0.78);

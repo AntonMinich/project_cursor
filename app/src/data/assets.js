@@ -17,7 +17,7 @@ export const IMAGES = {
   teams: [
     { src: asset('teams/servolux.jpg'), name: 'Servolux' },
     { src: asset('teams/elkpath.jpg'), name: 'Т-Банк' },
-    { src: asset('teams/rovar.jpg'), name: 'Rovar', wide: true },
+    { src: asset('teams/rovar.jpg'), name: 'Rovar' },
     { src: asset('teams/on-bike.jpg'), name: 'On-bike' },
     { src: asset('teams/iron.jpg'), name: 'Триатлон' },
   ],
