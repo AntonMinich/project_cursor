@@ -16,7 +16,7 @@ export default function Header() {
       </div>
       <div className="flex items-center justify-between px-4 py-2 md:px-8">
         <button type="button" className="flex items-center" onClick={() => { goTo(0); setOpen(false); }}>
-          <img src={IMAGES.logoLight} alt="FINCODE" className="h-7 w-auto md:h-8" />
+          <img src={IMAGES.logoLight} alt="FINCODE" className="h-8 w-auto md:h-9" />
         </button>
         <div className="flex items-center gap-3">
           <span className="text-xs font-semibold tracking-[0.18em] text-white/70 md:text-sm">
