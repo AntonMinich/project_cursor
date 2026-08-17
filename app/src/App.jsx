@@ -80,13 +80,6 @@ export default function App() {
 
   useEffect(() => {
     const onWheel = (event) => {
-      const scroller = event.target.closest?.('.section-shell');
-      if (scroller && scroller.scrollHeight > scroller.clientHeight + 4) {
-        const atTop = scroller.scrollTop <= 0;
-        const atBottom = scroller.scrollTop + scroller.clientHeight >= scroller.scrollHeight - 2;
-        if (event.deltaY > 0 && !atBottom) return;
-        if (event.deltaY < 0 && !atTop) return;
-      }
       if (Math.abs(event.deltaY) < 28) return;
       if (lock.current) return;
       lock.current = true;
@@ -124,10 +117,10 @@ export default function App() {
 
   return (
     <DeckContext.Provider value={deck}>
-      <div className="h-svh overflow-hidden bg-fincode-blue text-white">
+      <div className="deck bg-fincode-blue text-white">
         <Header />
-        <main className="h-svh pt-[64px] pb-[68px]">
-          <div key={activeId} className="h-full animate-slide">
+        <main className="min-h-0 overflow-hidden">
+          <div key={activeId} className="animate-slide">
             {SLIDES[index].node}
           </div>
         </main>

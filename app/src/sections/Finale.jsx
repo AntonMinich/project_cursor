@@ -3,28 +3,22 @@ import { IMAGES } from '../data/assets.js';
 
 export default function Finale() {
   return (
-    <section id="finale" className="relative h-full bg-fincode-blue">
-      <div className="mx-auto flex h-full max-w-[1320px] flex-col justify-center px-5 py-4 md:px-10">
+    <section id="finale" className="slide">
+      <div className="slide-inner">
         <Reveal>
-          <img src={IMAGES.logo} alt="FINCODE" className="h-10 w-auto md:h-14" />
-          <h2 className="mt-5 md:mt-8 text-6xl font-extrabold tracking-tight md:text-8xl">
+          <img src={IMAGES.logo} alt="FINCODE" className="h-7 w-auto md:h-9" />
+          <h1 className="mt-4">
             FINCODE <span className="text-fincode-mint">TEAM</span>
-          </h2>
-          <p className="mt-8 text-3xl font-semibold leading-snug md:text-5xl">
+          </h1>
+          <p className="mt-3 text-[clamp(1.1rem,3vh,2rem)] font-semibold leading-snug">
             Команда, которую видят.
             <br />
             Бренд, который запоминают.
           </p>
-          <p className="mt-10 max-w-2xl text-xl leading-relaxed text-white/70">
-            Увидел форму.
-            <br />
-            Запомнил бренд.
-            <br />
-            Встретил снова.
-            <br />
-            Вспомнил, когда понадобился лизинг.
+          <p className="lead mt-4 max-w-xl">
+            Увидел форму. Запомнил бренд. Встретил снова. Вспомнил, когда понадобился лизинг.
           </p>
-          <p className="mt-6 md:mt-10 max-w-3xl text-2xl font-bold md:text-3xl">
+          <p className="mt-4 text-[clamp(1rem,2.3vh,1.45rem)] font-bold">
             Предлагаем запустить FINCODE TEAM как годовой маркетинговый проект.
           </p>
         </Reveal>

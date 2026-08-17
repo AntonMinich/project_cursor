@@ -14,13 +14,14 @@ body,
 #root {
   height: 100%;
   margin: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
 }
 
 body {
   background: #101954;
   color: #fff;
   font-family: var(--font-sans);
-  overflow: hidden;
 }
 
 ::selection {
@@ -28,26 +29,81 @@ body {
   color: #101954;
 }
 
-.section-shell {
+.deck {
+  height: 100dvh;
+  max-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  overflow: hidden;
+  touch-action: none;
+}
+
+.slide {
   height: 100%;
-  overflow: auto;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.slide-inner {
+  box-sizing: border-box;
+  height: 100%;
+  min-height: 0;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 6px 20px;
   display: flex;
-  align-items: stretch;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  overflow: hidden;
 }
 
-.animate-slide {
-  animation: slide-in 0.38s ease;
+.slide h1 {
+  font-size: clamp(2rem, 7vh, 4.6rem);
+  line-height: 0.95;
+  font-weight: 800;
+  margin: 0;
 }
 
-@keyframes slide-in {
-  from {
-    opacity: 0;
-    transform: translateX(28px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
+.slide h2 {
+  font-size: clamp(1.2rem, 3.4vh, 2.4rem);
+  line-height: 1.12;
+  font-weight: 800;
+  margin: 0;
+}
+
+.slide h3 {
+  font-size: clamp(0.95rem, 2vh, 1.25rem);
+  margin: 0;
+}
+
+.slide .lead {
+  font-size: clamp(0.82rem, 1.65vh, 1.12rem);
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0;
+}
+
+.slide .stat {
+  font-size: clamp(1.5rem, 5.2vh, 3.2rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.kicker {
+  margin: 0;
+  color: #01f69b;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.fill {
+  min-height: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
 }
 
 .stat-bar {
@@ -60,4 +116,29 @@ body {
 
 .progress-line {
   transform-origin: left center;
+}
+
+.animate-slide {
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  animation: slide-in 0.32s ease;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .slide-inner {
+    padding: 4px 14px;
+    gap: 8px;
+  }
 }

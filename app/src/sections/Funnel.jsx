@@ -1,4 +1,5 @@
 import Reveal from '../components/Reveal.jsx';
+import Slide from '../components/Slide.jsx';
 
 const STEPS = [
   { n: '01', title: 'Увидел форму' },
@@ -12,33 +13,29 @@ const STEPS = [
 
 export default function Funnel() {
   return (
-    <section id="funnel" className="section-shell">
-      <div className="mx-auto flex h-full w-full max-w-[1320px] flex-col justify-center px-5 py-4 md:px-10">
-        <Reveal>
-          <p className="mb-4 text-xs font-semibold tracking-[0.24em] text-fincode-mint">КАК РАБОТАЕТ</p>
-          <h2 className="max-w-4xl text-4xl font-extrabold leading-tight md:text-6xl">
-            Один контакт — мало.
-            <br />
-            <span className="text-fincode-mint">Повторный контакт — запоминается.</span>
-          </h2>
-        </Reveal>
-        <div className="mt-6 md:mt-10 flex flex-col gap-4 md:flex-row md:flex-wrap md:items-stretch">
-          {STEPS.map((step, i) => (
-            <Reveal key={step.n} delay={i * 0.05} className="md:min-w-[140px] md:flex-1">
-              <div className="flex h-full flex-row items-center gap-4 rounded-2xl border border-white/10 bg-white/5 p-5 md:flex-col md:items-start md:p-6">
-                <p className="text-sm font-semibold tracking-[0.18em] text-fincode-mint">{step.n}</p>
-                <p className="text-xl font-semibold leading-snug">{step.title}</p>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-        <Reveal>
-          <p className="mt-5 md:mt-8 max-w-3xl text-xl text-white/65">
-            Мы не пытаемся продать лизинг во время соревнования. Мы хотим, чтобы в момент потребности
-            название FINCODE уже было знакомо.
-          </p>
-        </Reveal>
+    <Slide id="funnel">
+      <Reveal>
+        <p className="kicker">КАК РАБОТАЕТ</p>
+        <h2 className="mt-2">
+          Один контакт — мало.
+          <br />
+          <span className="text-fincode-mint">Повторный контакт — запоминается.</span>
+        </h2>
+      </Reveal>
+      <div className="grid grid-cols-2 gap-2 md:grid-cols-7">
+        {STEPS.map((step, i) => (
+          <Reveal key={step.n} delay={i * 0.03}>
+            <div className="h-full rounded-2xl border border-white/10 bg-white/5 p-3">
+              <p className="kicker">{step.n}</p>
+              <p className="mt-2 text-sm font-semibold leading-snug md:text-base">{step.title}</p>
+            </div>
+          </Reveal>
+        ))}
       </div>
-    </section>
+      <p className="lead">
+        Мы не пытаемся продать лизинг во время соревнования. Мы хотим, чтобы в момент потребности
+        название FINCODE уже было знакомо.
+      </p>
+    </Slide>
   );
 }
