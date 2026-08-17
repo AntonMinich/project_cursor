@@ -6,7 +6,7 @@ const OPTIONS = ['Автомобиль', 'Телефон', 'Техника', 'Д
 export default function Leads() {
   return (
     <section id="leads" className="section-shell">
-      <div className="mx-auto grid w-full max-w-[1320px] items-center gap-12 px-6 py-24 md:grid-cols-2 md:px-10">
+      <div className="mx-auto grid h-full w-full max-w-[1320px] items-center gap-8 px-5 py-4 md:grid-cols-2 md:px-10">
         <Reveal>
           <p className="mb-4 text-xs font-semibold tracking-[0.24em] text-fincode-mint">ЛИДЫ</p>
           <h2 className="text-4xl font-extrabold leading-tight md:text-5xl">

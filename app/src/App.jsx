@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Header from './components/Header.jsx';
-import { SECTIONS } from './data/assets.js';
+import Controls from './components/Controls.jsx';
+import { DeckContext } from './DeckContext.jsx';
 import Hero from './sections/Hero.jsx';
 import NotKit from './sections/NotKit.jsx';
 import Audience from './sections/Audience.jsx';
@@ -16,58 +17,122 @@ import Year from './sections/Year.jsx';
 import Measure from './sections/Measure.jsx';
 import Leads from './sections/Leads.jsx';
 import WhyNow from './sections/WhyNow.jsx';
+import { KitRace, KitTops } from './sections/KitVariants.jsx';
 import Finale from './sections/Finale.jsx';
 
+const SLIDES = [
+  { id: 'hero', node: <Hero /> },
+  { id: 'not-kit', node: <NotKit /> },
+  { id: 'audience', node: <Audience /> },
+  { id: 'scale', node: <Scale /> },
+  { id: 'funnel', node: <Funnel /> },
+  { id: 'why-kit', node: <WhyKit /> },
+  { id: 'familiar', node: <Familiar /> },
+  { id: 'why-fincode', node: <WhyFincode /> },
+  { id: 'team', node: <TeamLook /> },
+  { id: 'others', node: <Others /> },
+  { id: 'gets', node: <Gets /> },
+  { id: 'year', node: <Year /> },
+  { id: 'measure', node: <Measure /> },
+  { id: 'leads', node: <Leads /> },
+  { id: 'why-now', node: <WhyNow /> },
+  { id: 'kit-tops', node: <KitTops /> },
+  { id: 'kit-race', node: <KitRace /> },
+  { id: 'finale', node: <Finale /> },
+];
+
 export default function App() {
-  const [activeId, setActiveId] = useState('hero');
-  const [progress, setProgress] = useState(0);
+  const [index, setIndex] = useState(0);
+  const lock = useRef(false);
+  const total = SLIDES.length;
+  const activeId = SLIDES[index].id;
+
+  const goTo = useCallback((idOrIndex) => {
+    if (typeof idOrIndex === 'number') {
+      setIndex(Math.max(0, Math.min(total - 1, idOrIndex)));
+      return;
+    }
+    const next = SLIDES.findIndex((slide) => slide.id === idOrIndex);
+    if (next >= 0) setIndex(next);
+  }, [total]);
+
+  const next = useCallback(() => setIndex((value) => Math.min(total - 1, value + 1)), [total]);
+  const prev = useCallback(() => setIndex((value) => Math.max(0, value - 1)), []);
+
+  const deck = useMemo(() => ({ index, total, goTo, next, prev, activeId }), [index, total, goTo, next, prev, activeId]);
 
   useEffect(() => {
-    const nodes = SECTIONS.map((item) => document.getElementById(item.id)).filter(Boolean);
-    const io = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible?.target?.id) setActiveId(visible.target.id);
-      },
-      { threshold: [0.25, 0.45, 0.6] },
-    );
-    nodes.forEach((node) => io.observe(node));
+    const onKey = (event) => {
+      if (event.key === 'ArrowRight' || event.key === 'PageDown' || event.key === ' ') {
+        event.preventDefault();
+        next();
+      }
+      if (event.key === 'ArrowLeft' || event.key === 'PageUp') {
+        event.preventDefault();
+        prev();
+      }
+      if (event.key === 'Home') goTo(0);
+      if (event.key === 'End') goTo(total - 1);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [goTo, next, prev, total]);
 
-    const onScroll = () => {
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      setProgress(max > 0 ? window.scrollY / max : 0);
+  useEffect(() => {
+    const onWheel = (event) => {
+      const scroller = event.target.closest?.('.section-shell');
+      if (scroller && scroller.scrollHeight > scroller.clientHeight + 4) {
+        const atTop = scroller.scrollTop <= 0;
+        const atBottom = scroller.scrollTop + scroller.clientHeight >= scroller.scrollHeight - 2;
+        if (event.deltaY > 0 && !atBottom) return;
+        if (event.deltaY < 0 && !atTop) return;
+      }
+      if (Math.abs(event.deltaY) < 28) return;
+      if (lock.current) return;
+      lock.current = true;
+      if (event.deltaY > 0) next();
+      else prev();
+      window.setTimeout(() => {
+        lock.current = false;
+      }, 720);
     };
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('wheel', onWheel, { passive: true });
+    return () => window.removeEventListener('wheel', onWheel);
+  }, [next, prev]);
+
+  useEffect(() => {
+    let startX = null;
+    const onStart = (event) => {
+      startX = event.changedTouches[0].screenX;
+    };
+    const onEnd = (event) => {
+      if (startX === null) return;
+      const dx = event.changedTouches[0].screenX - startX;
+      if (Math.abs(dx) > 48) {
+        if (dx < 0) next();
+        else prev();
+      }
+      startX = null;
+    };
+    window.addEventListener('touchstart', onStart, { passive: true });
+    window.addEventListener('touchend', onEnd, { passive: true });
     return () => {
-      io.disconnect();
-      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('touchstart', onStart);
+      window.removeEventListener('touchend', onEnd);
     };
-  }, []);
+  }, [next, prev]);
 
   return (
-    <div className="bg-fincode-blue text-white">
-      <Header activeId={activeId} progress={progress} />
-      <main>
-        <Hero />
-        <NotKit />
-        <Audience />
-        <Scale />
-        <Funnel />
-        <WhyKit />
-        <Familiar />
-        <WhyFincode />
-        <TeamLook />
-        <Others />
-        <Gets />
-        <Year />
-        <Measure />
-        <Leads />
-        <WhyNow />
-        <Finale />
-      </main>
-    </div>
+    <DeckContext.Provider value={deck}>
+      <div className="h-svh overflow-hidden bg-fincode-blue text-white">
+        <Header />
+        <main className="h-svh pt-[64px] pb-[68px]">
+          <div key={activeId} className="h-full animate-slide">
+            {SLIDES[index].node}
+          </div>
+        </main>
+        <Controls index={index} total={total} onPrev={prev} onNext={next} onGo={goTo} />
+      </div>
+    </DeckContext.Provider>
   );
 }

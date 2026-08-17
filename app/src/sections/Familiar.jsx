@@ -12,7 +12,7 @@ const STORY = [
 export default function Familiar() {
   return (
     <section id="familiar" className="section-shell bg-fincode-blue-deep">
-      <div className="mx-auto w-full max-w-[1320px] px-6 py-24 md:px-10">
+      <div className="mx-auto flex h-full w-full max-w-[1320px] flex-col justify-center px-5 py-4 md:px-10">
         <Reveal>
           <p className="mb-4 text-xs font-semibold tracking-[0.24em] text-fincode-mint">ЗНАКОМСТВО</p>
           <h2 className="max-w-4xl text-4xl font-extrabold leading-tight md:text-6xl">
@@ -21,7 +21,7 @@ export default function Familiar() {
             Потом — «я уже их где-то видел».
           </h2>
         </Reveal>
-        <div className="mt-16 grid gap-0 md:grid-cols-6">
+        <div className="mt-6 md:mt-10 grid gap-0 md:grid-cols-6">
           {STORY.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.06}>
               <article className="border-t border-white/10 py-6 md:border-t-0 md:border-l md:px-5 md:py-0 first:md:border-l-0 first:md:pl-0">
@@ -35,7 +35,7 @@ export default function Familiar() {
           ))}
         </div>
         <Reveal>
-          <p className="mt-16 max-w-4xl text-2xl font-semibold leading-snug md:text-3xl">
+          <p className="mt-6 md:mt-10 max-w-4xl text-2xl font-semibold leading-snug md:text-3xl">
             Мы не рассчитываем на продажу с первого контакта.{' '}
             <span className="text-fincode-mint">Мы создаем знакомство с брендом.</span>
           </p>

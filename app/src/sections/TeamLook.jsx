@@ -12,15 +12,15 @@ const ITEMS = [
 export default function TeamLook() {
   return (
     <section id="team" className="section-shell bg-fincode-blue-deep">
-      <div className="mx-auto w-full max-w-[1320px] px-6 py-24 md:px-10">
+      <div className="mx-auto flex h-full w-full max-w-[1320px] flex-col justify-center px-5 py-4 md:px-10">
         <Reveal>
           <p className="mb-4 text-xs font-semibold tracking-[0.24em] text-fincode-mint">ЭКИПИРОВКА</p>
-          <h2 className="text-4xl font-extrabold md:text-6xl">FINCODE TEAM</h2>
+          <h2 className="text-3xl font-extrabold md:text-5xl">FINCODE TEAM</h2>
           <p className="mt-5 max-w-3xl text-xl text-white/70">
             Мы будем выглядеть как команда. Логотип читается с расстояния. Без лишних знаков на форме.
           </p>
         </Reveal>
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="mt-5 md:mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {ITEMS.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.05}>
               <article className="rounded-[24px] border border-white/10 bg-black/20 p-5 transition hover:border-fincode-mint/40">

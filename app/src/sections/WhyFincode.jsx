@@ -12,7 +12,7 @@ const FUTURE = [
 export default function WhyFincode() {
   return (
     <section id="why-fincode" className="section-shell">
-      <div className="mx-auto w-full max-w-[1320px] px-6 py-24 md:px-10">
+      <div className="mx-auto flex h-full w-full max-w-[1320px] flex-col justify-center px-5 py-4 md:px-10">
         <Reveal>
           <p className="mb-4 text-xs font-semibold tracking-[0.24em] text-fincode-mint">ПОЧЕМУ FINCODE</p>
           <h2 className="max-w-5xl text-4xl font-extrabold leading-tight md:text-6xl">
@@ -21,7 +21,7 @@ export default function WhyFincode() {
             Мы знакомим аудиторию с брендом FINCODE.
           </h2>
         </Reveal>
-        <div className="mt-16 grid gap-6 md:grid-cols-2">
+        <div className="mt-6 md:mt-10 grid gap-6 md:grid-cols-2">
           <Reveal>
             <article className="h-full rounded-[28px] border border-white/10 bg-white/5 p-10">
               <p className="text-xs font-semibold tracking-[0.24em] text-fincode-mint">СЕГОДНЯ</p>
@@ -50,7 +50,7 @@ export default function WhyFincode() {
           </Reveal>
         </div>
         <Reveal>
-          <p className="mt-12 text-3xl font-extrabold md:text-4xl">
+          <p className="mt-5 md:mt-8 text-3xl font-extrabold md:text-4xl">
             Один знакомый бренд <span className="text-fincode-mint">→</span> множество будущих потребностей.
           </p>
         </Reveal>

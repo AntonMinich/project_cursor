@@ -3,7 +3,7 @@ import Reveal from '../components/Reveal.jsx';
 export default function WhyNow() {
   return (
     <section id="why-now" className="section-shell bg-fincode-blue-deep">
-      <div className="mx-auto w-full max-w-[1320px] px-6 py-24 md:px-10">
+      <div className="mx-auto flex h-full w-full max-w-[1320px] flex-col justify-center px-5 py-4 md:px-10">
         <Reveal>
           <p className="mb-4 text-xs font-semibold tracking-[0.24em] text-fincode-mint">МОМЕНТ</p>
           <h2 className="text-4xl font-extrabold md:text-6xl">Сейчас FINCODE строит бренд.</h2>
@@ -14,7 +14,7 @@ export default function WhyNow() {
             Мы можем начать формировать узнаваемость FINCODE там, где уже находится нужная нам аудитория.
           </p>
         </Reveal>
-        <div className="mt-16 grid gap-6 md:grid-cols-2">
+        <div className="mt-6 md:mt-10 grid gap-6 md:grid-cols-2">
           <Reveal>
             <article className="rounded-[28px] border border-white/10 p-10">
               <p className="text-xs font-semibold tracking-[0.2em] text-white/45">СЕГОДНЯ</p>

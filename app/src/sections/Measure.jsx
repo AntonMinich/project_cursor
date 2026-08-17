@@ -31,14 +31,14 @@ const LEVELS = [
 export default function Measure() {
   return (
     <section id="measure" className="section-shell bg-fincode-blue-deep">
-      <div className="mx-auto w-full max-w-[1320px] px-6 py-24 md:px-10">
+      <div className="mx-auto flex h-full w-full max-w-[1320px] flex-col justify-center px-5 py-4 md:px-10">
         <Reveal>
           <p className="mb-4 text-xs font-semibold tracking-[0.24em] text-fincode-mint">KPI</p>
           <h2 className="max-w-4xl text-4xl font-extrabold md:text-6xl">
             Спорт — это эмоции. Результат — в цифрах.
           </h2>
         </Reveal>
-        <div className="mt-14 grid gap-6 md:grid-cols-3">
+        <div className="mt-5 md:mt-8 grid gap-6 md:grid-cols-3">
           {LEVELS.map((level, i) => (
             <Reveal key={level.title} delay={i * 0.07}>
               <article className="h-full rounded-3xl border border-white/10 p-8">
@@ -55,7 +55,7 @@ export default function Measure() {
           ))}
         </div>
         <Reveal>
-          <p className="mt-12 max-w-4xl text-xl leading-relaxed text-white/70">
+          <p className="mt-5 md:mt-8 max-w-4xl text-xl leading-relaxed text-white/70">
             На первом этапе основной результат проекта — рост узнаваемости и количества контактов с брендом.
             Лидогенерация подключается как измеримый дополнительный результат.
           </p>
