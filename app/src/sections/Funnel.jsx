@@ -26,7 +26,7 @@ export default function Funnel() {
         {STEPS.map((step, i) => (
           <Reveal key={step.n} delay={i * 0.03}>
             <div className="h-full rounded-2xl border border-white/10 bg-white/5 p-3">
-              <p className="kicker">{step.n}</p>
+              <p className="kicker-sm">{step.n}</p>
               <p className="mt-2 text-sm font-semibold leading-snug md:text-base">{step.title}</p>
             </div>
           </Reveal>

@@ -21,7 +21,7 @@ export default function Year() {
           {YEAR.map((item) => (
             <article key={item.season} className="relative md:pt-6">
               <span className="mb-2 hidden h-2.5 w-2.5 rounded-full bg-fincode-mint md:block" />
-              <p className="kicker">{item.season}</p>
+              <p className="kicker-sm">{item.season}</p>
               <p className="mt-2 text-[clamp(0.95rem,2.1vh,1.25rem)] font-semibold leading-snug">{item.text}</p>
             </article>
           ))}

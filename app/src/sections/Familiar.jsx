@@ -25,7 +25,7 @@ export default function Familiar() {
         {STORY.map((item, i) => (
           <Reveal key={item.title} delay={i * 0.04}>
             <article className="h-full rounded-2xl border border-white/10 p-3">
-              <p className="kicker">{String(i + 1).padStart(2, '0')}</p>
+              <p className="kicker-sm">{String(i + 1).padStart(2, '0')}</p>
               <h3 className="mt-2 font-bold">{item.title}</h3>
               <p className="lead mt-1">{item.text}</p>
             </article>

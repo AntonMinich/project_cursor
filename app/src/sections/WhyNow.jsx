@@ -14,11 +14,11 @@ export default function WhyNow() {
       </Reveal>
       <div className="grid gap-3 md:grid-cols-2">
         <article className="rounded-2xl border border-white/10 p-5">
-          <p className="kicker">СЕГОДНЯ</p>
+          <p className="kicker-sm">СЕГОДНЯ</p>
           <p className="mt-3 text-[clamp(1.2rem,3vh,1.9rem)] font-extrabold">Нас еще нужно узнавать.</p>
         </article>
         <article className="rounded-2xl border border-fincode-mint/40 bg-fincode-mint/10 p-5">
-          <p className="kicker">ЗАВТРА</p>
+          <p className="kicker-sm">ЗАВТРА</p>
           <p className="mt-3 text-[clamp(1.2rem,3vh,1.9rem)] font-extrabold">Нас уже должны узнавать.</p>
         </article>
       </div>
