@@ -19,7 +19,7 @@ export default function Gets() {
       <div className="grid gap-2 md:grid-cols-5">
         {ITEMS.map((item) => (
           <article key={item.n} className="rounded-2xl border border-white/10 p-3">
-            <p className="kicker">{item.n}</p>
+            <p className="kicker-sm">{item.n}</p>
             <h3 className="mt-2 font-bold">{item.title}</h3>
             <p className="lead mt-1">{item.text}</p>
           </article>

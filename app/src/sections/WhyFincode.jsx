@@ -23,13 +23,13 @@ export default function WhyFincode() {
       </Reveal>
       <div className="grid min-h-0 gap-3 md:grid-cols-2">
         <article className="rounded-2xl border border-white/10 bg-white/5 p-4">
-          <p className="kicker">СЕГОДНЯ</p>
+          <p className="kicker-sm">СЕГОДНЯ</p>
           <Car className="mt-4 text-fincode-mint" size={36} strokeWidth={1.4} />
           <h3 className="mt-3 text-xl font-extrabold">АВТОЛИЗИНГ</h3>
           <p className="lead mt-2">Автомобиль — одна из ключевых потребностей взрослой работающей аудитории.</p>
         </article>
         <article className="rounded-2xl border border-white/10 bg-fincode-green/35 p-4">
-          <p className="kicker">ЗАВТРА</p>
+          <p className="kicker-sm">ЗАВТРА</p>
           <div className="mt-4 grid grid-cols-2 gap-2">
             {FUTURE.map((item) => (
               <div key={item.label} className="flex items-center gap-2 text-sm">

@@ -102,12 +102,22 @@ body {
   line-height: 1;
 }
 
-.kicker {
+.kicker,
+.channel-kicker {
+  margin: 0;
+  color: #01f69b;
+  font-size: calc(clamp(0.72rem, 1.35vh, 0.88rem) + 2px);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.kicker-sm {
   margin: 0;
   color: #01f69b;
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
@@ -146,15 +156,6 @@ body {
   align-items: flex-start;
   min-height: 0;
   text-align: left;
-}
-
-.channel-kicker {
-  margin: 0;
-  color: #01f69b;
-  font-size: calc(clamp(0.72rem, 1.35vh, 0.88rem) + 2px);
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
 }
 
 .slide-channel .channel-title {
@@ -289,21 +290,8 @@ body {
 }
 
 .aud-top {
-  display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(220px, 0.65fr);
-  align-items: end;
-  gap: 2vw;
-  flex: 0 0 30%;
+  flex: 0 0 auto;
   min-height: 0;
-}
-
-.aud-kicker {
-  margin: 0;
-  color: #01f69b;
-  font-size: clamp(0.72rem, 1.3vh, 0.88rem);
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
 }
 
 .slide-audience .aud-title {
@@ -329,31 +317,15 @@ body {
   color: rgba(255, 255, 255, 0.78);
 }
 
-.aud-hero {
-  text-align: right;
-}
-
-.aud-hero-num,
 .aud-stat {
   margin: 0;
-  font-size: clamp(2.6rem, 6.4vh, 4.4rem);
+  font-size: clamp(2.1rem, 4.8vh, 3.2rem);
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 0.9;
   color: #01f69b;
 }
 
-.aud-stat {
-  font-size: clamp(2.1rem, 4.8vh, 3.2rem);
-}
-
-.aud-hero-label {
-  margin: 0.7vh 0 0;
-  font-size: clamp(1.05rem, 2.2vh, 1.4rem);
-  font-weight: 700;
-}
-
-.aud-hero-note,
 .aud-stat-note {
   margin: 0.35vh 0 0;
   font-size: clamp(0.78rem, 1.45vh, 0.92rem);
@@ -364,9 +336,9 @@ body {
   display: grid;
   grid-template-columns: 1.15fr 1fr 1fr;
   gap: 0;
-  flex: 1 1 58%;
+  flex: 1 1 auto;
   min-height: 0;
-  margin-top: 2.2vh;
+  margin-top: 3.2vh;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -382,16 +354,16 @@ body {
   padding-right: 0;
 }
 
-.aud-num {
-  margin: 0;
-  color: #01f69b;
-  font-size: clamp(0.78rem, 1.5vh, 0.94rem);
-  font-weight: 700;
-  letter-spacing: 0.16em;
+.aud-col:nth-child(2) {
+  padding-right: 2.8vw;
+}
+
+.aud-col:nth-child(3) {
+  padding-left: 2.8vw;
 }
 
 .slide-audience .aud-col h3 {
-  margin: 0.45vh 0 1.1vh;
+  margin: 0.7vh 0 1.1vh;
   font-size: clamp(1.05rem, 2.2vh, 1.35rem);
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -515,30 +487,23 @@ body {
 .tone-soft strong { color: rgba(255, 255, 255, 0.78); }
 .tone-dim strong { color: rgba(255, 255, 255, 0.45); }
 
-.aud-foot {
-  flex: 0 0 auto;
-  margin: 1.6vh 0 0;
-  font-size: clamp(0.78rem, 1.5vh, 0.95rem);
-  line-height: 1.35;
-  color: rgba(255, 255, 255, 0.48);
-}
-
 @media (max-width: 900px) {
-  .aud-top,
   .aud-grid,
   .aud-pair,
   .aud-roles {
     grid-template-columns: 1fr;
   }
 
-  .aud-hero {
-    text-align: left;
-  }
-
   .aud-col + .aud-col {
     border-left: 0;
     border-top: 1px solid rgba(255, 255, 255, 0.12);
     padding: 1.2vh 0 0;
+  }
+
+  .aud-col:nth-child(2),
+  .aud-col:nth-child(3) {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
