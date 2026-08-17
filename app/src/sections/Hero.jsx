@@ -4,7 +4,15 @@ import Reveal from '../components/Reveal.jsx';
 export default function Hero() {
   return (
     <section id="hero" className="slide slide-hero relative">
-      <img src={IMAGES.sport.hero} alt="" className="absolute inset-0 h-full w-full object-cover object-center" />
+      <img
+        src={IMAGES.sport.hero}
+        alt=""
+        width={1920}
+        height={1279}
+        fetchPriority="high"
+        decoding="async"
+        className="absolute inset-0 h-full w-full object-cover object-center"
+      />
       <div className="absolute inset-0 bg-gradient-to-r from-fincode-blue via-fincode-blue/80 to-fincode-blue/20" />
       <div className="absolute inset-0 bg-gradient-to-t from-fincode-blue/70 via-transparent to-transparent" />
       <div className="slide-inner relative z-10 justify-end pb-4">
