@@ -127,7 +127,8 @@ body {
 
 .channel-mark {
   position: absolute;
-  top: 2.4vh;
+  top: auto;
+  bottom: 2.2vh;
   right: 2.2vw;
   z-index: 0;
   width: min(22vw, 240px);
@@ -142,7 +143,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: flex-start;
   min-height: 0;
+  text-align: left;
 }
 
 .channel-kicker {
@@ -191,11 +194,13 @@ body {
 }
 
 .channel-col {
-  padding: 0 2.1vw 4.5vh;
+  padding: 0 1.8vw 4.5vh 0;
+  text-align: left;
 }
 
 .channel-col + .channel-col {
   border-left: 1px solid rgba(255, 255, 255, 0.14);
+  padding-left: 1.8vw;
 }
 
 .channel-num {
@@ -265,7 +270,8 @@ body {
   .channel-mark {
     width: min(18vw, 120px);
     opacity: 0.4;
-    top: 1.2vh;
+    top: auto;
+    bottom: 1.4vh;
     right: 3vw;
   }
 
