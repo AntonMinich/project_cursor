@@ -184,10 +184,12 @@ body {
 }
 
 .channel-bottom {
+  --channel-gap: 3.6vw;
   position: relative;
   flex: 1 1 58%;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: var(--channel-gap);
   align-content: start;
   min-height: 0;
   margin-top: 3.2vh;
@@ -195,13 +197,19 @@ body {
 }
 
 .channel-col {
-  padding: 0 1.8vw 4.5vh 0;
+  position: relative;
+  padding: 0 0 4.5vh;
   text-align: left;
 }
 
-.channel-col + .channel-col {
-  border-left: 1px solid rgba(255, 255, 255, 0.14);
-  padding-left: 1.8vw;
+.channel-col + .channel-col::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 4.5vh;
+  left: calc(var(--channel-gap) / -2);
+  width: 1px;
+  background: rgba(255, 255, 255, 0.14);
 }
 
 .channel-num {
@@ -232,6 +240,7 @@ body {
 
 .channel-path {
   position: absolute;
+  grid-column: 1 / -1;
   left: 0;
   right: 0;
   bottom: 0.6vh;
@@ -252,6 +261,7 @@ body {
 
   .channel-bottom {
     grid-template-columns: 1fr;
+    column-gap: 0;
     margin-top: 2vh;
   }
 
@@ -259,8 +269,11 @@ body {
     padding: 1.2vh 0 1.4vh;
   }
 
+  .channel-col + .channel-col::before {
+    display: none;
+  }
+
   .channel-col + .channel-col {
-    border-left: 0;
     border-top: 1px solid rgba(255, 255, 255, 0.14);
   }
 
