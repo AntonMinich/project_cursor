@@ -18,10 +18,10 @@ const SECTORS = [
 ];
 
 const ROLES = [
-  { name: 'Специалисты и руководители', value: 49, tone: 'mint' },
-  { name: 'Рабочие', value: 33, tone: 'mid' },
-  { name: 'Собственники и топ-менеджеры', value: 13, tone: 'soft' },
-  { name: 'Другие категории', value: 5, tone: 'dim' },
+  { name: 'Специалисты и руководители', value: 49 },
+  { name: 'Рабочие', value: 33 },
+  { name: 'Собственники и топ-менеджеры', value: 13 },
+  { name: 'Другие категории', value: 5 },
 ];
 
 const DONUT = 'conic-gradient(#01f69b 0 49%, rgba(1,246,155,0.5) 49% 82%, rgba(255,255,255,0.38) 82% 95%, rgba(255,255,255,0.14) 95% 100%)';
@@ -44,25 +44,13 @@ export default function Audience() {
       <div className="aud-grid">
         <motion.section className="aud-col" {...fade(0.16)}>
           <p className="channel-num">01</p>
-          <h3>Возраст и мобильность</h3>
-          <div className="aud-pair">
-            <div>
-              <p className="aud-stat">
-                <CountUp value={77} />
-                <span>%</span>
-              </p>
-              <p className="aud-stat-label">в возрасте 25–44 лет</p>
-              <p className="aud-stat-note">«В самом расцвете сил»</p>
-            </div>
-            <div>
-              <p className="aud-stat">
-                <CountUp value={77} />
-                <span>%</span>
-              </p>
-              <p className="aud-stat-label">приезжают на старты на собственных автомобилях</p>
-              <p className="aud-stat-note">Потенциально релевантная аудитория для автомобильного направления FINCODE</p>
-            </div>
-          </div>
+          <h3>Возраст</h3>
+          <p className="aud-stat">
+            <CountUp value={77} />
+            <span>%</span>
+          </p>
+          <p className="aud-stat-label">в возрасте 25–44 лет</p>
+          <p className="aud-stat-note">«В самом расцвете сил»</p>
         </motion.section>
 
         <motion.section className="aud-col" {...fade(0.24)}>
@@ -98,7 +86,7 @@ export default function Audience() {
             <div className="aud-donut" style={{ background: DONUT }} aria-hidden="true" />
             <ul>
               {ROLES.map((item) => (
-                <li key={item.name} className={`tone-${item.tone}`}>
+                <li key={item.name}>
                   <strong>
                     <CountUp value={item.value} suffix="%" />
                   </strong>
@@ -109,6 +97,23 @@ export default function Audience() {
           </div>
         </motion.section>
       </div>
+
+      <motion.section className="aud-mobility" {...fade(0.42)}>
+        <p className="channel-num">04</p>
+        <div className="aud-mobility-copy">
+          <h3>Мобильность</h3>
+          <p className="aud-stat">
+            <CountUp value={77} />
+            <span>%</span>
+          </p>
+        </div>
+        <div className="aud-mobility-text">
+          <p className="aud-stat-label">приезжают на старты на собственных автомобилях</p>
+          <p className="aud-stat-note">
+            Потенциально релевантная аудитория для автомобильного направления FINCODE
+          </p>
+        </div>
+      </motion.section>
     </Slide>
   );
 }
