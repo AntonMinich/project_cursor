@@ -29,6 +29,10 @@ export const IMAGES = {
     triathlon: asset('kit/triathlon.svg'),
     training: asset('kit/training.svg'),
   },
+  gifts: {
+    keychain: asset('gifts/keychain.jpg'),
+    socks: asset('gifts/socks.jpg'),
+  },
 };
 
 export const SECTIONS = [
@@ -38,6 +42,7 @@ export const SECTIONS = [
   { id: 'scale', label: 'Масштаб' },
   { id: 'familiar', label: 'Механика' },
   { id: 'team', label: 'FINCODE TEAM' },
+  { id: 'gifts', label: 'FINCODE TEAM' },
   { id: 'others', label: 'FINCODE TEAM' },
   { id: 'gets', label: 'Результат' },
   { id: 'why-now', label: 'Проект' },
@@ -50,6 +55,7 @@ export const NAV = [
   { id: 'scale', label: 'Масштаб' },
   { id: 'familiar', label: 'Механика' },
   { id: 'team', label: 'Форма' },
+  { id: 'gifts', label: 'Подарки' },
   { id: 'gets', label: 'Результат' },
   { id: 'why-now', label: 'Проект' },
 ];
