@@ -66,7 +66,6 @@ export default function WhyNow() {
       </div>
 
       <motion.div className="now-foot" {...fade(0.44)}>
-        <p className="now-foot-lead">Окно короткое.</p>
         <p className="now-foot-main">
           Пока бренд строится — каждый старт работает на знакомство с <BrandLine text="FINCODE" />.
         </p>
