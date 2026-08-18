@@ -8,6 +8,7 @@ import Audience from './sections/Audience.jsx';
 import Scale from './sections/Scale.jsx';
 import Familiar from './sections/Familiar.jsx';
 import TeamLook from './sections/TeamLook.jsx';
+import Gifts from './sections/Gifts.jsx';
 import Others from './sections/Others.jsx';
 import Gets from './sections/Gets.jsx';
 import WhyNow from './sections/WhyNow.jsx';
@@ -20,6 +21,7 @@ const SLIDES = [
   { id: 'scale', node: <Scale /> },
   { id: 'familiar', node: <Familiar /> },
   { id: 'team', node: <TeamLook /> },
+  { id: 'gifts', node: <Gifts /> },
   { id: 'others', node: <Others /> },
   { id: 'gets', node: <Gets /> },
   { id: 'why-now', node: <WhyNow /> },
