@@ -1210,17 +1210,12 @@ body {
   color: #01f69b;
 }
 
-.finale-title span {
+.now-brand {
   color: #01f69b;
 }
 
-.now-lead {
-  margin: 1.2vh 0 0;
-  max-width: 42rem;
-  font-size: clamp(0.95rem, 1.9vh, 1.2rem);
-  font-weight: 500;
-  line-height: 1.4;
-  color: rgba(255, 255, 255, 0.78);
+.finale-title span {
+  color: #01f69b;
 }
 
 .now-board {
@@ -1229,7 +1224,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0;
-  margin-top: 3.2vh;
+  margin-top: 2.8vh;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -1237,9 +1232,9 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 1.4vh;
+  gap: 1vh;
   min-width: 0;
-  padding: 2.6vh 2.4vw 0 0;
+  padding: 2.4vh 2.4vw 0 0;
 }
 
 .now-card + .now-card {
@@ -1247,9 +1242,18 @@ body {
   border-left: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.now-label {
+.now-num {
   margin: 0;
   color: #01f69b;
+  font-size: clamp(1.05rem, 2.2vh, 1.4rem);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1;
+}
+
+.now-label {
+  margin: 0.4vh 0 0;
+  color: rgba(255, 255, 255, 0.55);
   font-size: clamp(0.78rem, 1.5vh, 0.95rem);
   font-weight: 700;
   letter-spacing: 0.2em;
@@ -1257,16 +1261,37 @@ body {
 }
 
 .now-line {
-  margin: 0;
-  max-width: 14ch;
-  font-size: clamp(1.8rem, 4.4vh, 3rem);
+  margin: 1vh 0 0;
+  max-width: 12ch;
+  font-size: clamp(2rem, 4.8vh, 3.2rem);
   font-weight: 800;
-  letter-spacing: -0.035em;
-  line-height: 1.08;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
 }
 
 .now-card.is-next .now-line {
   color: #01f69b;
+}
+
+.now-points {
+  margin: 2vh 0 0;
+  padding: 1.6vh 0 0;
+  list-style: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.now-points li {
+  margin: 0;
+  padding: 0.7vh 0;
+  font-size: clamp(0.95rem, 1.9vh, 1.2rem);
+  font-weight: 600;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.72);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.now-points li:last-child {
+  border-bottom: 0;
 }
 
 .now-foot,
@@ -1292,6 +1317,9 @@ body {
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.2;
+}
+
+.finale-foot-main {
   color: #01f69b;
 }
 
