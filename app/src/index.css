@@ -903,13 +903,13 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.12);
   }
 
-  .finale-path {
-    grid-template-columns: 1fr 1fr;
+  .finale-journey {
+    flex-wrap: wrap;
+    row-gap: 0.8vh;
   }
 
-  .finale-path li + li {
-    border-left: 0;
-    padding-left: 0;
+  .finale-brand {
+    font-size: clamp(2.6rem, 10vw, 5rem);
   }
 }
 
@@ -1181,8 +1181,7 @@ body {
   color: #01f69b;
 }
 
-.slide-now .slide-inner,
-.slide-finale .slide-inner {
+.slide-now .slide-inner {
   max-width: min(1480px, 94vw);
   width: 100%;
   justify-content: flex-start;
@@ -1190,13 +1189,11 @@ body {
   padding: 1.8vh 2.2vw 4.6vh;
 }
 
-.now-top,
-.finale-top {
+.now-top {
   flex: 0 0 auto;
 }
 
-.slide-now .now-title,
-.slide-finale .finale-title {
+.slide-now .now-title {
   margin: 0.7vh 0 0;
   font-size: clamp(2rem, 5.2vh, 3.6rem);
   font-weight: 800;
@@ -1204,17 +1201,12 @@ body {
   line-height: 1.08;
 }
 
-.now-title span,
-.finale-slogan span {
+.now-title span {
   display: block;
   color: #01f69b;
 }
 
 .now-brand {
-  color: #01f69b;
-}
-
-.finale-title span {
   color: #01f69b;
 }
 
@@ -1294,24 +1286,21 @@ body {
   border-bottom: 0;
 }
 
-.now-foot,
-.finale-foot {
+.now-foot {
   flex: 0 0 auto;
   margin-top: auto;
   padding-top: 2vh;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.now-foot-lead,
-.finale-foot-lead {
+.now-foot-lead {
   margin: 0;
   font-size: clamp(1.12rem, 2.5vh, 1.55rem);
   font-weight: 500;
   color: rgba(255, 255, 255, 0.78);
 }
 
-.now-foot-main,
-.finale-foot-main {
+.now-foot-main {
   margin: 0.55vh 0 0;
   font-size: clamp(1.4rem, 3.4vh, 2.15rem);
   font-weight: 800;
@@ -1319,64 +1308,94 @@ body {
   line-height: 1.2;
 }
 
-.finale-foot-main {
-  color: #01f69b;
+.slide-finale {
+  position: relative;
 }
 
-.finale-logo {
-  display: block;
-  height: clamp(2.4rem, 6vh, 3.8rem);
-  width: auto;
-  margin-top: 1.4vh;
+.slide-finale .slide-inner {
+  position: relative;
+  z-index: 1;
+  max-width: min(1480px, 94vw);
+  width: 100%;
+  justify-content: center;
+  gap: 0;
+  padding: 2.4vh 2.2vw 5vh;
+}
+
+.finale-mark {
+  position: absolute;
+  right: 2.2vw;
+  bottom: 3vh;
+  z-index: 0;
+  width: min(28vw, 320px);
+  opacity: 0.12;
+  pointer-events: none;
+  user-select: none;
+}
+
+.finale-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 52rem;
+}
+
+.finale-brand {
+  margin: 1.6vh 0 0;
+  font-size: clamp(3.4rem, 9vh, 6.4rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 0.92;
+}
+
+.finale-brand span {
+  color: #01f69b;
 }
 
 .finale-slogan {
-  margin: 1.4vh 0 0;
-  font-size: clamp(1.35rem, 3.2vh, 2.1rem);
+  margin: 2.4vh 0 0;
+  font-size: clamp(1.45rem, 3.6vh, 2.35rem);
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 1.15;
 }
 
-.finale-path {
-  flex: 1 1 auto;
-  min-height: 0;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0;
-  margin: 3vh 0 0;
-  padding: 0;
-  list-style: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
+.finale-rule {
+  width: 3.4rem;
+  height: 1px;
+  margin-top: 2.8vh;
+  background: #01f69b;
 }
 
-.finale-path li {
+.finale-journey {
   display: flex;
-  flex-direction: column;
-  gap: 1vh;
-  min-width: 0;
-  padding: 2.2vh 1.4vw 0 0;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem 0.85rem;
+  margin: 2.4vh 0 0;
+  font-size: clamp(0.95rem, 2vh, 1.2rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.78);
 }
 
-.finale-path li + li {
-  padding-left: 1.4vw;
-  border-left: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.finale-step {
+.finale-arrow {
   color: #01f69b;
-  font-size: clamp(1.05rem, 2.2vh, 1.4rem);
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  line-height: 1;
+  font-weight: 700;
 }
 
-.finale-text {
-  max-width: 11ch;
-  font-size: clamp(1.15rem, 2.5vh, 1.55rem);
+.finale-ask {
+  margin: 4vh 0 0;
+  font-size: clamp(1.35rem, 3.2vh, 2.05rem);
   font-weight: 800;
   letter-spacing: -0.03em;
-  line-height: 1.15;
+  line-height: 1.2;
+}
+
+.finale-ask span {
+  display: block;
+  color: #01f69b;
 }
 
 .fill {
